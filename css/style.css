@@ -1,102 +1,185 @@
+.container {
+  width: 1100px;
+  height:800px;
+  position: relative;
+  background-color: #fff;
+  /* border:1px solid red; */
+  margin: 0 auto;
+  box-sizing:border-box ;
+}
+button{
+  background-color: #ddd;
+  border:none
+}
 .main {
-  width: 300px;
-  height :400px;
+  width: 550px;
+  height:100%;
   margin: 0 auto;
-  padding-top: 70px;
-  background-color: skyblue;
-  border: 2px solid black;
-  margin: 0 auto;
+  border:1px solid red;
   text-align: center;
   position:relative;
-  padding: 30px 20px;
 }
-
-
-
-  
-
-
+.header{
+  width:100%;
+  height:150px;
+  /* background-color: royalblue; */
+  position: relative;
+}
+.header h2, p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+}
+.header p{
+  width:100%;
+  padding-top:30px;
+  color:#ddd;
+}
+.header h2{
+  width:100%;
+  position: absolute;
+  top:70px;
+  font-size: 40px;
+}
+.gender,
+.job,
+.battle {
+  width: 550px;
+  margin: 0 auto;
+}
 /* render 1 */
 .gender {
   display: none;
-  background-color: tomato;
+  /* background-color: tomato; */
 }
-
 .gender.active, .job.active {
   display: block;
 }
 .battle.active {
   display: flex;
 }
-
-.gender > button {
-  width: 200px;
-  height: 60px;
-  margin: 20px 0;
-}
-
-
-main > span {
+.woman,
+.man,
+.singer,
+.actor,
+.all {
+  width: 500px;
+  height: 100px;
+  margin: 0 auto;
   display: block;
+  margin-bottom: 30px;
+  font-size:30px;
+  font-weight: 700;
 }
-
-.job {
-  width: 200px;
-  margin:20px auto;
-  display: none;
-  background-color: #bbb;
+.woman:focus,
+.man:focus,
+.singer:focus,
+.actor:focus,
+.all:focus{
+  color:purple
 }
-.job::after{
-  content:'';
-  display: block;
-  clear: both;
+/* .wrap2 */
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:800px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
 }
-.job > button {
-width:150px;
-height:50px;
-margin:10px;
-border:1px solid red;
-
+.wrap {
+  background-color: #eee;
+}
+.wrap > h1 {
+  width: 250px;
+  height:200px;
+  background: url(/img/logo.png) no-repeat;
+  background-size: contain;
+  text-indent:-9999px;
+  text-overflow: ellipsis;
+  transform: translateY(-50%);
+}
+.wrap span{
+  font-size: 30px;
+  position: absolute;
+  margin-left: -20px;
+  bottom:calc(50% - 50px);
+}
+.wrap span:nth-child(4){
+  bottom:calc(50% - 100px);
+}
+.loading {
+  animation-duration: 2s;
+  animation-name: load;
+  animation-fill-mode: forwards;
+}
+@keyframes load{
+  0% {
+  transform: translate3d(0);
+  }
+  100% {
+    transform: translate3d(0, -100%, 0);
+  }
 }
 /* 랜딩2 */
+  .job {
+    margin:20px auto;
+    display: none;
+    background-color: #bbb;
+  }
+  .job::after{
+    content:'';
+    display: block;
+    clear: both;
+  }
 .job > .prev {
-  width:30px;
-  height:30px;
+  width:60px;
+  height:60px;
   position: absolute;
   top:47%;
-  left: 0;
+  left: -100px;
   overflow: hidden;
   text-indent: -9999px;
-  background:url() no-repeat;
+  background:url(/img/prev.png) no-repeat;
+  background-size: contain;
 }
-
+.container  h2{
+  margin-bottom:30px ;
+  font-size: 30px;
+}
+.container p {
+  margin-bottom: 30px;
+}
+.next {
+  width: 150px;
+  height: 80px;
+  font-size: 50px;
+}
+.start {
+  width: 150px;
+  height: 80px;
+  font-size: 40px;
+}
 /* 랜딩 3 */
-
-.main h2, p {
-  text-align: center;
-  font-size: 15px;
-  font-weight: 800;
-}
-.main:nth-child(3) {
-  position: relative;
-}
 .battle {
   display: none;
   margin-top: 30px;
 }
-
 .main:nth-child(3) h2 {
   color: #abd5bd;
   margin-bottom: 10px;
 }
-
 .main:nth-child(3) .battle h3 {
   position: absolute;
   top: 75px;
   left: 155px;
   color: white;
 }
-
 .main:nth-child(3) .left {
   display: flex;
   width: 50%;
@@ -111,24 +194,51 @@ border:1px solid red;
   text-align: center;
   border: 2px solid;
 }
-
-
-
+/* 랜딩 4*/
 /* 랜딩 4*/
 .main:nth-child(4) {
 }
-
-.battle figure{
-  width : 200px;
-  height: 200px;
-  background-color: yellow;
+.battle {
+  height: 500px;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
-
+.battle h3 {
+  position: absolute;
+  top: 150px;
+  color: #000;
+  font-size: 35px;
+  font-weight: 800;
+}
+.battle figure{
+  width : 100%;
+  height: 200px;
+}
 .battle figure img{
   display: block;
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 300px;
   background-color: green;
 }
-
-
+footer > span {
+  left:50%;
+  font-size: 20px;
+  font-weight: 700;
+  /* display: inline-block; */
+  /* background-color: royalblue; */
+  transform: translateX(-50%);
+  position: absolute;
+  bottom:100px;
+}
+footer >span:nth-child(2) {
+  bottom:50px;
+}
+.battleFinal {
+  display: none;
+}
+.champion {
+  position: absolute;
+  width: 100%;
+  transform: scale(2) ;
+}
